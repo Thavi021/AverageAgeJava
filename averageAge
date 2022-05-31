@@ -1,0 +1,53 @@
+/*
+caUsingYLoops
+@Thavi021
+average age of students in class
+  accumalator   (adding all the ages)
+  incrimenting  (helps count)
+  initializing  (starting at the right point)       
+  sentinal value   (when am I done/indicator)                      while-loop is used when you don't know how many times something must be executed. Must be true to enter the y=loop
+*/
+
+package causingyloop1;
+
+import java.util.Scanner;
+
+public class CaUsingYLoop1 {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int intAge, intSum, intCount;
+        double dblAvg;
+        
+        intSum = 0;   //initializing
+        intCount = 0;                                                          //Declaring and initializing variable are important just too ensure that the program doesn't assign a random value;
+                                                                               //when you enter a loop you can't "leave" the group
+       System.out.println("Please enter age <enter 321 to stop>: [" + (intCount +1) + "] ");
+       intAge = sc.nextInt();          //primer read - this set i sonly run once in the program
+       
+       while (intAge != 321){                                                   //this value assigned is usually a value that won't be used in the program therefore it is the sentinal value
+       
+           //System.out.println("Please enter age <enter 321 to stop>: ");
+           //intAge = sc.nextInt();                  this resulted ina logical error because...
+           //if you swap the order of the 2 methods you will be throwing out the first of the initial age entered (because you entered the loop)
+           intSum = intSum + intAge;   // accumalating 
+           intCount = intCount + 1;    //incrementing
+           
+           System.out.println("Please enter age <enter 321 to stop>: ");
+           intAge = sc.nextInt();                  //this is the corrected order
+           
+    }
+            if (intCount == 0){
+                System.out.println("There is no average to calculate");
+            }
+            else 
+            {
+           dblAvg = intSum / intCount;                                     //when programming with java they assume int/int = int but if you are looking for a dbl answer just change one of the int value to dbl (reasonably)
+           System.out.println("The average age of the " + intCount + " students in th class is " + dblAvg);
+}
+}
+}
+
+//things like adding and minusing values here and there may cause other logical errors thus instead we can an if... else statement instead
+//how many times does a loop run? 29 because the first one runs when the loop is opened 
